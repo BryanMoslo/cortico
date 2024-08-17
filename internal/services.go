@@ -1,11 +1,11 @@
 package internal
 
 import (
-	links "cortico/internal/home"
+	"cortico/internal/links"
 	"fmt"
 
 	"github.com/leapkit/leapkit/core/server"
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/lib/pq"
 )
 
 // AddServices is a function that will be called by the server

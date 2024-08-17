@@ -7,7 +7,8 @@ import (
 	"cortico/internal/migrations"
 
 	"github.com/leapkit/leapkit/core/db"
-	_ "github.com/mattn/go-sqlite3" // sqlite3 driver
+	// postgres driver
+	_ "github.com/lib/pq"
 )
 
 // The migrate command is used to ship our application
@@ -23,4 +24,6 @@ func main() {
 	if err != nil {
 		fmt.Println("Error running migrations: ", err)
 	}
+
+	fmt.Println("✅ Migrations ran successfully")
 }
