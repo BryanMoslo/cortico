@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"cortico/internal/api"
 	"cortico/internal/links"
 	"cortico/public"
 
@@ -60,6 +61,8 @@ func New() Server {
 	r.HandleFunc("GET /{$}", links.Index)
 	r.HandleFunc("POST /short", links.ShortURL)
 	r.HandleFunc("GET /{short_url}", links.ShortUrlRedirect)
+
+	r.HandleFunc("POST /api/short", api.Short)
 
 	return r
 }
